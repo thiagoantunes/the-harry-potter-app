@@ -1,24 +1,33 @@
-import React from "react";
+import "./index.css";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { ErrorComponent, RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import "./index.css";
+import { Spinner } from "./components/Spinner";
 
-// Set up a Router instance
+const queryClient = new QueryClient();
+
 const router = createRouter({
   routeTree,
   defaultPreload: "intent",
+  defaultPreloadStaleTime: 0,
+  scrollRestoration: true,
+  context: {
+    queryClient,
+  },
+  defaultErrorComponent: ({ error }) => <ErrorComponent error={error} />,
+  defaultPendingComponent: () => (
+    <div className={`p-2 text-2xl`}>
+      <Spinner />
+    </div>
+  ),
 });
 
-// Register things for typesafety
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }
 }
-
-const queryClient = new QueryClient();
 
 const rootElement = document.getElementById("app")!;
 

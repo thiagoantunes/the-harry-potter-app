@@ -1,35 +1,31 @@
-import * as React from "react";
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { Link, createRootRouteWithContext, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import { QueryClient } from "@tanstack/react-query";
+import { HousePreferenceGateway } from "../components/HousePreferenceGateway";
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   component: RootComponent,
 });
 
 function RootComponent() {
   return (
     <>
-      <div className="p-2 flex gap-2 text-lg">
-        <Link
-          to="/"
-          activeProps={{
-            className: "font-bold",
-          }}
-          activeOptions={{ exact: true }}
-        >
-          Home
-        </Link>{" "}
-        <Link
-          to="/about"
-          activeProps={{
-            className: "font-bold",
-          }}
-        >
-          About
-        </Link>
+      <div className="flex flex-col gap-2">
+        <HousePreferenceGateway>
+          <Link
+            to="/"
+            activeProps={{
+              className: "font-bold",
+            }}
+            activeOptions={{ exact: true }}
+          >
+            The Harry Potter App
+          </Link>
+          <Outlet />
+        </HousePreferenceGateway>
       </div>
-      <hr />
-      <Outlet />
       <TanStackRouterDevtools position="bottom-right" />
     </>
   );
