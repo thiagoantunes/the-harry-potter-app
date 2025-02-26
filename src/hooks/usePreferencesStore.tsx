@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 import { HouseType } from "../types/houses";
 
 interface AppState {
@@ -11,7 +11,7 @@ interface AppState {
 
 export const useAppStore = create<AppState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       preferredHouse: undefined,
       favoriteCharactersIds: [],
       setPreferredHouse: (preferredHouse) => set(() => ({ preferredHouse })),
