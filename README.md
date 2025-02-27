@@ -4,9 +4,7 @@ A web app showcasing Harry Potter characters with filtering capabilities, detail
 
 ## Demo
 
-<!-- TODO: deploy the app and add the link here -->
-
-[Live Demo](#)
+[Live Demo](https://the-harry-potter-app.vercel.app/)
 
 [Wireframes](https://www.tldraw.com/f/SIDe4FlkrnXJDQyeK0qWb?d=v-615.-307.3070.1292.page)
 
