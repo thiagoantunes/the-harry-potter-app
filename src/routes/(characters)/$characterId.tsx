@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import CharacterDetails from "../../components/characterDetails/CharacterDetails";
+import { useCharacter } from "../../hooks/useCharacter";
 
 export const Route = createFileRoute("/(characters)/$characterId")({
   component: CharacterDeailsView,
@@ -6,12 +8,9 @@ export const Route = createFileRoute("/(characters)/$characterId")({
 
 function CharacterDeailsView() {
   const { characterId } = Route.useParams();
-  return (
-    <div className="flex flex-col gap-2">
-      <Link to="/" className="font-bold">
-        Back
-      </Link>
-      <div>Hello {characterId}!</div>
-    </div>
-  );
+  const { character } = useCharacter(characterId);
+
+  if (!character) return <></>;
+
+  return <CharacterDetails character={character} />;
 }

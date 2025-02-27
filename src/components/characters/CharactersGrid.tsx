@@ -1,23 +1,25 @@
 import { Link } from "@tanstack/react-router";
 import { useCharacters } from "../../hooks/useCharacters";
+import { CharacterCard } from "../CharacterCard";
 
 export const CharactersGrid = () => {
-  const { data } = useCharacters();
+  const { characters } = useCharacters();
 
   return (
-    <ul>
-      {data?.map((character) => (
+    <div className="container m-auto grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
+      {characters.map((character) => (
         <Link
           key={character.id}
+          preload="intent"
           to="/$characterId"
           params={{ characterId: character.id }}
-          preload="intent"
-          className={`block px-3 py-2`}
-          activeProps={{ className: `font-bold` }}
         >
-          {character.name}
+          <CharacterCard
+            character={character}
+            className="transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+          />
         </Link>
       ))}
-    </ul>
+    </div>
   );
 };

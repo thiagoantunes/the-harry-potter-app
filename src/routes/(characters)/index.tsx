@@ -17,9 +17,9 @@ export const Route = createFileRoute("/(characters)/")({
 
 function CharactersIndexView() {
   return (
-    <div className="flex flex-col gap-2">
+    <>
       <CharactersFilters />
       <CharactersGrid />
-    </div>
+    </>
   );
 }
