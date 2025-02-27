@@ -1,5 +1,4 @@
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { QueryClient } from "@tanstack/react-query";
 import { HousePreferenceGateway } from "../components/HousePreferenceGateway";
 import { Toolbar } from "../components/Toolbar";
@@ -17,8 +16,6 @@ function RootComponent() {
         <Toolbar />
         <Outlet />
       </HousePreferenceGateway>
-
-      <TanStackRouterDevtools position="bottom-right" />
     </div>
   );
 }
