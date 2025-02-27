@@ -16,7 +16,9 @@ export const HousePreferenceGateway = ({ children }: HousePreferenceGatewayProps
 
   return (
     <div className="flex flex-col items-center justify-center gap-8 pt-30">
-      <h1 className="text-center text-3xl">Choose your preferred house</h1>
+      <h1 className="text-center text-3xl tracking-widest font-stretch-extra-expanded">
+        Choose your preferred house
+      </h1>
 
       <div className="flex flex-wrap items-center justify-evenly gap-12">
         {houses.map((house) => (

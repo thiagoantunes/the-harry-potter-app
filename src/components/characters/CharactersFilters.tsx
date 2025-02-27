@@ -28,6 +28,7 @@ export const CharactersFilters = () => {
             key={label}
             onClick={() => setFilterBy(filterKey)}
             active={filterBy === filterKey}
+            className="font-mono font-normal"
           >
             {label}
           </Button>

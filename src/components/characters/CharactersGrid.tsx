@@ -6,7 +6,7 @@ export const CharactersGrid = () => {
   const { characters } = useCharacters();
 
   return (
-    <div className="container m-auto grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
+    <div className="container mx-auto grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-4">
       {characters.map((character) => (
         <Link
           key={character.id}
