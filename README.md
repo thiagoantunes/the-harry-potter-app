@@ -18,6 +18,14 @@ A web app showcasing Harry Potter characters with filtering capabilities, detail
 - **Favorites System**: Mark and filter your favorite characters
 - **Responsive Design**: Works on desktop and mobile devices
 
+## Project Structure
+
+The codebase follows a modular architecture for better maintainability:
+
+- **src/lib/** - Components, constants, utils, hooks that can be used anywhere in the codebase. Any module can import from lib.
+
+- **src/routes/** - Feature modules in file-based routing using TanStack Router. Files from one module can only import from ancestor folders within the same module or from src/lib.
+
 ## Tech Stack
 
 This application is built with modern web technologies:
