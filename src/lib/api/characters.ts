@@ -1,4 +1,4 @@
-import { HouseType } from "../types/houses";
+import { HouseType } from "@lib/constants/houses";
 
 export const fetchCharacter = async (id: string) => {
   const response = await fetch(`${import.meta.env.VITE_HARRY_POTTER_API_URL}/character/${id}`);

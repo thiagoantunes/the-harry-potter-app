@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { createFileRoute, retainSearchParams } from "@tanstack/react-router";
-import { characterFilters } from "../../types/filters";
-import { CharactersFilters } from "../../components/characters/CharactersFilters";
-import { CharactersGrid } from "../../components/characters/CharactersGrid";
+import { characterFilters } from "@lib/constants/filters";
+import { CharactersGrid } from "./-components/CharactersGrid";
+import { CharactersFilters } from "./-components/CharactersFilters";
 
 export const Route = createFileRoute("/(characters)/")({
   component: CharactersIndexView,

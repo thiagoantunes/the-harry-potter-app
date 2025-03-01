@@ -1,3 +1,7 @@
+import { Divider } from "./Divider";
+import { Grid } from "./Grid";
+import { Item } from "./Item";
+
 export const InfoSection = ({
   title,
   icon,
@@ -15,3 +19,7 @@ export const InfoSection = ({
     {children}
   </div>
 );
+
+InfoSection.Grid = Grid;
+InfoSection.Item = Item;
+InfoSection.Divider = Divider;

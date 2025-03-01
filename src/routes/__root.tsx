@@ -1,7 +1,7 @@
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
 import { QueryClient } from "@tanstack/react-query";
-import { HousePreferenceGateway } from "../components/HousePreferenceGateway";
-import { Toolbar } from "../components/Toolbar";
+import { HousePreferenceGateway } from "./-components/HousePreferenceGateway";
+import { Toolbar } from "./-components/Toolbar";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;

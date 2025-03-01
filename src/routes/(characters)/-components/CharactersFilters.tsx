@@ -1,7 +1,6 @@
-import { useNavigate } from "@tanstack/react-router";
-import { CharacterFilterType } from "../../types/filters";
-import { Route } from "../../routes/(characters)";
-import { Button } from "../Button";
+import { getRouteApi } from "@tanstack/react-router";
+import { Button } from "@lib/components/Button";
+import { CharacterFilterType } from "@lib/constants/filters";
 
 const filterButtons: { filterKey: CharacterFilterType | undefined; label: string }[] = [
   { filterKey: undefined, label: "All Characters" },
@@ -10,9 +9,11 @@ const filterButtons: { filterKey: CharacterFilterType | undefined; label: string
   { filterKey: "favorite", label: "Favorite" },
 ];
 
+const routeApi = getRouteApi("/(characters)/");
+
 export const CharactersFilters = () => {
-  const navigate = useNavigate({ from: Route.fullPath });
-  const { filterBy } = Route.useSearch();
+  const navigate = routeApi.useNavigate();
+  const { filterBy } = routeApi.useSearch();
 
   const setFilterBy = (filterBy?: CharacterFilterType) =>
     navigate({

@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { Character } from "../types/characters";
-import { useAppStore } from "./useAppStore";
-import { Route } from "../routes/(characters)";
-import { CharacterFilterType } from "../types/filters";
-import { fetchCharacters } from "../api/characters";
+import { Route } from "..";
+import { fetchCharacters } from "@lib/api/characters";
+import { useAppStore } from "@lib/hooks/useAppStore";
+import { Character } from "@lib/constants/characters";
+import { CharacterFilterType } from "@lib/constants/filters";
 
 export const useCharacters = () => {
   const { filterBy } = Route.useSearch();

@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import { useAppStore } from "../hooks/useAppStore";
-import { houses } from "../types/houses";
+import { Button } from "@lib/components/Button";
+import { useAppStore } from "@lib/hooks/useAppStore";
+import { houses } from "@lib/constants/houses";
 import { HouseCard } from "./HouseCard";
-import { Button } from "./Button";
 
 interface HousePreferenceGatewayProps {
   children: ReactNode;

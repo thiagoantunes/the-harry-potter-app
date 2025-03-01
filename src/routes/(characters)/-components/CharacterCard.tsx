@@ -1,6 +1,6 @@
-import { Character } from "../types/characters";
 import clsx from "clsx";
-import { ToggleFavoriteButton } from "./characters/ToggleFavoriteButton";
+import { Character } from "@lib/constants/characters";
+import { ToggleFavoriteButton } from "./ToggleFavoriteButton";
 
 type CharacterCardProps = {
   character: Character;
@@ -11,7 +11,7 @@ export const CharacterCard = ({ character, className }: CharacterCardProps) => {
   return (
     <article
       className={clsx(
-        "relative isolate flex h-[350px] w-[200px] flex-col justify-end overflow-hidden rounded-2xl px-3 py-6 shadow-md shadow-zinc-950",
+        "relative isolate flex h-[350px] flex-col justify-end overflow-hidden rounded-2xl px-3 py-6 shadow-md shadow-zinc-950",
         className
       )}
     >

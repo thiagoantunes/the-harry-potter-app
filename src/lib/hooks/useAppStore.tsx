@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { HouseType } from "../types/houses";
+import { HouseType } from "@lib/constants/houses";
 
 interface AppState {
   preferredHouse: HouseType | null | undefined;

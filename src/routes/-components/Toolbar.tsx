@@ -1,6 +1,6 @@
 import { useRouter, useRouterState } from "@tanstack/react-router";
 import { ArrowLeft, Shield } from "lucide-react";
-import { useAppStore } from "../hooks/useAppStore";
+import { useAppStore } from "@lib/hooks/useAppStore";
 
 export const Toolbar = () => {
   const router = useRouter();

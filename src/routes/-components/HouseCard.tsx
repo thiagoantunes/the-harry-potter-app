@@ -1,4 +1,4 @@
-import { HouseType } from "../types/houses";
+import { HouseType } from "@lib/constants/houses";
 
 type HouseCardProps = {
   house: HouseType;

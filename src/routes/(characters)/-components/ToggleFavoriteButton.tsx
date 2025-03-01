@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import { useAppStore } from "../../hooks/useAppStore";
 import { Star } from "lucide-react";
 import { ButtonHTMLAttributes } from "react";
+import { useAppStore } from "@lib/hooks/useAppStore";
 
 type ToggleFavoriteButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   characterId: string;
